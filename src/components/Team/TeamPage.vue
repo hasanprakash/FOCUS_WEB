@@ -4,6 +4,8 @@
     <h1>TEAM FOCUS</h1>
   </div>
 
+  <team-container title="" :data="main"></team-container>
+
   <team-container title="DIRECTORS" :data="directors"></team-container>
 
   <team-container title="WEB MASTERS" :data="webmasters"></team-container>
@@ -16,6 +18,23 @@ import TeamContainer from "./TeamContainer.vue";
 export default {
   data() {
     return {
+      main: [
+        {
+          name: "Sai Kiran",
+          role: "President",
+          id: "180030000",
+        },
+        {
+          name: "Prateek",
+          role: "Treasurer",
+          id: "180000000",
+        },
+        {
+          name: "Jahnavi",
+          role: "Secretary",
+          id: "190000000",
+        },
+      ],
       directors: [
         {
           name: "Sai Kiran",
@@ -24,13 +43,18 @@ export default {
         },
         {
           name: "Prateek",
-          role: "Treasure",
+          role: "Treasurer",
           id: "180000000",
         },
         {
           name: "Jahnavi",
           role: "Secretary",
           id: "190000000",
+        },
+        {
+          name: "Prateek",
+          role: "Treasurer",
+          id: "180000000",
         },
       ],
       webmasters: [
@@ -41,7 +65,7 @@ export default {
         },
         {
           name: "Prateek",
-          role: "Treasure",
+          role: "Treasurer",
           id: "180000000",
         },
         {
@@ -51,7 +75,7 @@ export default {
         },
         {
           name: "Prateek",
-          role: "Treasure",
+          role: "Treasurer",
           id: "180000000",
         },
         {
@@ -68,7 +92,7 @@ export default {
         },
         {
           name: "Prateek",
-          role: "Treasure",
+          role: "Treasurer",
           id: "180000000",
         },
         {
@@ -83,7 +107,7 @@ export default {
         },
         {
           name: "Prateek",
-          role: "Treasure",
+          role: "Treasurer",
           id: "180000000",
         },
         {

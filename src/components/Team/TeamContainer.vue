@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="section-subtitle"><h3>{{ title }}</h3></div>
+    <div v-if="title!=''" class="section-subtitle"><h3>{{ title }}</h3></div>
     <team-card v-for="i in data" :key="i.id">
       <template #name>{{ i.name }}</template>
       <template #role>{{ i.role }}</template>
