@@ -14,19 +14,19 @@ export default {
     return {
       technologyClubs: [
         {
-          technology: 'DS/ML',
+          technology: 'TOOL NAME',
           heading: 'KOGNITIV',
           description: 'Total description about this technology club',
           presidentName: 'Pavan Sai'
         }, 
         {
-          technology: 'Unity',
+          technology: 'Unity/AR/VR',
           heading: 'MAYAVI',
           description: 'Total description about this technology club',
           presidentName: 'Some Person'
         }, 
         {
-          technology: 'Cloud',
+          technology: 'TOOL NAME',
           heading: 'MEGA',
           description: 'Total description about this technology club',
           presidentName: 'Some Person'

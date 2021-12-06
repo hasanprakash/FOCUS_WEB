@@ -89,7 +89,7 @@ export default {};
 <style>
 .navbar {
   margin-bottom: 20px;
-  padding: 0;
+  /* padding: 0; */
   /**Removing this will increase the navbar height */
   height: auto;
 }
@@ -123,5 +123,9 @@ li a {
     align-items: center;
     justify-content: center;
   }
+}
+
+.nav-items div  {
+  float: left;
 }
 </style>
