@@ -31,7 +31,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: "/", redirect: "/home" },
-    { path: "/home", component: HomePage },
+    { path: "/home", component: HomePage, alias: '/' },
     { path: "/events", component: EventsPage },
     { path: "/team", component: TeamPage },
     {

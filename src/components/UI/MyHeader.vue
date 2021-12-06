@@ -89,6 +89,9 @@ export default {};
 <style>
 .navbar {
   margin-bottom: 20px;
+  padding: 0;
+  /**Removing this will increase the navbar height */
+  height: auto;
 }
 .nav-items {
     display: flex;
@@ -103,5 +106,22 @@ export default {};
 }
 .nav-items div:nth-child(2) {
     transform: scale(1.3);
+}
+li a {
+  border-color: transparent;
+}
+
+@media only screen and (max-width: 1000px) {
+  li a {
+    display: block;
+    width: 100%;
+    white-space: normal;
+    margin: 5px;
+  }
+  .align-items-center, ul  {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>
