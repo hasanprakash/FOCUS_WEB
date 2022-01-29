@@ -44,7 +44,7 @@
               <router-link
                 class="button is-info is-inverted px-3 me-2"
                 to="/home"
-                >HOME</router-link
+                >HOMEEE</router-link
               >
               <router-link
                 class="button is-info is-inverted px-3 me-2"
