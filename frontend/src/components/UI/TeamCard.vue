@@ -2,7 +2,7 @@
   <div class="team-6">
     <div class="team-img">
       <img
-        src="https://workmacro.com/wp-content/uploads/2018/02/1-by-1-1024x1024.png"
+        :src="imageUrl"
         alt="Team Image"
       />
     </div>
@@ -70,6 +70,7 @@
 
 <script>
 export default {
+  props: ['imageUrl'],
   data() {
     return {
 

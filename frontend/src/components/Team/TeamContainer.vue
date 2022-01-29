@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div v-if="title!=''" class="section-subtitle"><h3>{{ title }}</h3></div>
-    <team-card v-for="i of data" :key="i.collegeId">
+    <team-card v-for="i of data" :key="i.collegeId" :imageUrl="i.imageUrl">
       <template #name>{{ i.name }}</template>
       <template #role>{{ i.role }}</template>
       <template #id>{{ i.collegeId }}</template>

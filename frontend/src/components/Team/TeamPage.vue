@@ -5,7 +5,7 @@
   </div>
   <div v-if="!isError">
   <team-container v-if="!isLoading" title="" :data="main"></team-container>
-  <my-loader v-else title=""></my-loader>
+  <my-loader v-else title="" lheight="100px"></my-loader>
 
   <team-container v-if="!isLoading" title="DIRECTORS" :data="directors"></team-container>
   <my-loader v-else title="DIRECTORS"></my-loader>
@@ -27,18 +27,6 @@ export default {
     return {
       isLoading: false,
       isError: false,
-      dummy: [
-        {
-          collegeId: '',
-          name: '',
-          role: ''
-        },
-        {
-          collegeId: '',
-          name: '',
-          role: ''
-        }
-      ],
       main: [
       ],
       directors: [
@@ -56,6 +44,7 @@ export default {
     this.isLoading = true;
     this.axios.get('https://'+ this.domain +'/focusteam', {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
     .then((response) => {
+      console.log(response.data);
       for(let i=0;i<response.data.length;i++) {
         if(response.data[i].groupName == "MAIN")
         this.main.push(response.data[i]);

@@ -1,9 +1,10 @@
 <template>
-  <div v-if="!isError" class="main-container">
+  <div v-if="!isError && !isLoading" class="main-container">
     <div class="container">
       <techclub-container :data="technologyClubs"></techclub-container>
     </div>
   </div>
+  <my-loader v-else-if="!isError" title="JUST A MOMENT!!" lheight="400px"></my-loader>
   <h2 v-else class="error">Failed To Fetch Data....</h2>
 </template>
 
@@ -15,6 +16,7 @@ export default {
   data() {
     return {
       isError: false,
+      isLoading: false,
       technologyClubs: [
         // {
         //   technology: 'TOOL NAME',
@@ -22,37 +24,22 @@ export default {
         //   description: 'Total description about this technology club',
         //   presidentName: 'Pavan Sai'
         // }, 
-        // {
-        //   technology: 'Unity/AR/VR',
-        //   heading: 'MAYAVI',
-        //   description: 'Total description about this technology club',
-        //   presidentName: 'Some Person'
-        // }, 
-        // {
-        //   technology: 'TOOL NAME',
-        //   heading: 'MEGA',
-        //   description: 'Total description about this technology club',
-        //   presidentName: 'Some Person'
-        // }, 
-        // {
-        //   technology: 'AUTOMATION ANYWHERE',
-        //   heading: 'RPA CLUB',
-        //   description: 'Total description about this technology club',
-        //   presidentName: 'Some Person'
-        // }
       ]
     }
   },
   created() {
+    this.isLoading = true;
     this.axios.get('https://'+ this.domain +'/techclubs', {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
     .then((response) => {
       for(let i=0;i<response.data.length;i++) {
         this.technologyClubs.push(response.data[i]);
       }
+      this.isLoading = false;
     })
     .catch(e => {
       console.log(e);
       this.isError = true;
+      this.isLoading = false;
     })
   }
 };

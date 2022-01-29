@@ -1,7 +1,8 @@
 <template>
-  <div v-if="!isError" class="container" style="text-align: center">
-    <events-container :data="events"></events-container>
+  <div v-if="!isError && !isLoading" class="container" style="text-align: center">
+    <events-container v-if="!isLoading" :data="events"></events-container>
   </div>
+  <my-loader v-else-if="!isError" title='PLEASE WAIT' lheight="400px"></my-loader>
   <h2 v-else class="error">Failed To Fetch Data....</h2>
 </template>
 
@@ -13,36 +14,18 @@ export default {
   data() {
     return {
       isError: false,
+      isLoading: false,
       events: [
         // {
         //   heading: 'Y19 48-Hr Skill Development Project-3',
         //   description: 'description',
         //   imgUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F25%2F25231.png&f=1&nofb=1'
-        // }, {
-        //   heading: '#Include',
-        //   description: 'description',
-        //   imgUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F25%2F25231.png&f=1&nofb=1'
-        // }, {
-        //   heading: 'Surabhi',
-        //   description: 'description',
-        //   imgUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F25%2F25231.png&f=1&nofb=1'
-        // }, {
-        //   heading: 'Guruvedic 2020',
-        //   description: 'description',
-        //   imgUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F25%2F25231.png&f=1&nofb=1'
-        // }, {
-        //   heading: 'Pre-Conference Workshops',
-        //   description: 'description',
-        //   imgUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F25%2F25231.png&f=1&nofb=1'
-        // }, {
-        //   heading: '48-Hr Skill Development Project-1',
-        //   description: 'description',
-        //   imgUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F25%2F25231.png&f=1&nofb=1'
-        // }
+        // }, 
       ],
     };
   },
   created() {
+    this.isLoading = true;
     this.axios
       .get("https://"+ this.domain +"/events/", {
         auth: { username: "hasanprakash", password: "@hasanprakash" },
@@ -53,9 +36,11 @@ export default {
         for (let i = 0; i < response.data.length; i++) {
           this.events.push(response.data[i]);
         }
+        this.isLoading = false;
       })
       .catch((e) => {
         this.isError = true;
+        this.isLoading = false;
         console.log(e);
       });
   },

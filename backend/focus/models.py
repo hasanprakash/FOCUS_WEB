@@ -26,7 +26,7 @@ class FocusTeam(models.Model):
     imageUrl = models.CharField(max_length=300)
     groupName = models.CharField(max_length=50, choices=roles)
     def __str__(self) -> str:
-        return self.name
+        return f"{self.name} {self.collegeId}"
 
 class Images(models.Model):
     imageName = models.CharField(max_length=50)

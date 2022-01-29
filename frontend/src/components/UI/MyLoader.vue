@@ -1,19 +1,30 @@
 <template>
-  <div v-if="title!=''" class="section-subtitle"><h3>{{ title }}</h3></div>
-  <section class="container">
-    <div class="loader"></div><br>
-  </section>
-  <br>
-  <div class="loading">LOADING...</div>
+  <div :style="getMainContainerStyle">
+    <div v-if="title!=''" class="section-subtitle"><h3>{{ title }}</h3></div>
+    <section class="container">
+      <div class="loader"></div><br>
+    </section>
+    <br>
+    <div class="loading">LOADING...</div>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ['title']
+  props: ['title', 'lheight'],
+  computed: {
+    getMainContainerStyle() {
+      return {
+        height: this.lheight,
+        width: '100%',
+      }
+    }
+  }
 };
 </script>
 
 <style scoped>
+
 .container {
   display: flex;
   justify-content: center;
