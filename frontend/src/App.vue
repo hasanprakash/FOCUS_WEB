@@ -5,12 +5,8 @@
 </template>
 
 <script>
-import MyFooter from './components/UI/MyFooter.vue'
 export default {
   name: 'App',
-  components: {
-    MyFooter,
-  },
   provide() {
     return {
       domain: 'focusfinalwebsite.azurewebsites.net'

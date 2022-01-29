@@ -4,13 +4,17 @@
     <h1>TEAM FOCUS</h1>
   </div>
   <div v-if="!isError">
-  <team-container  title="" :data="main"></team-container>
+  <team-container v-if="!isLoading" title="" :data="main"></team-container>
+  <my-loader v-else title=""></my-loader>
 
-  <team-container title="DIRECTORS" :data="directors"></team-container>
+  <team-container v-if="!isLoading" title="DIRECTORS" :data="directors"></team-container>
+  <my-loader v-else title="DIRECTORS"></my-loader>
 
-  <team-container title="WEB MASTERS" :data="webmasters"></team-container>
+  <team-container v-if="!isLoading" title="WEB MASTERS" :data="webmasters"></team-container>
+  <my-loader v-else title="WEB MASTERS"></my-loader>
 
-  <team-container title="LEADS" :data="leads"></team-container>
+  <team-container v-if="!isLoading" title="LEADS" :data="leads"></team-container>
+  <my-loader v-else title="LEADS"></my-loader>
   </div>
   <h2 v-else class="error">Failed To Fetch Data....</h2>
 </template>
@@ -21,104 +25,27 @@ export default {
   inject: ['domain'],
   data() {
     return {
+      isLoading: false,
       isError: false,
+      dummy: [
+        {
+          collegeId: '',
+          name: '',
+          role: ''
+        },
+        {
+          collegeId: '',
+          name: '',
+          role: ''
+        }
+      ],
       main: [
-        // {
-        //   name: "Sai Kiran",
-        //   role: "President",
-        //   id: "180030000",
-        // },
-        // {
-        //   name: "Prateek",
-        //   role: "Treasurer",
-        //   id: "180000000",
-        // },
-        // {
-        //   name: "Jahnavi",
-        //   role: "Secretary",
-        //   id: "190000000",
-        // },
       ],
       directors: [
-        // {
-        //   name: "Sai Kiran",
-        //   role: "President",
-        //   id: "180030000",
-        // },
-        // {
-        //   name: "Prateek",
-        //   role: "Treasurer",
-        //   id: "180000000",
-        // },
-        // {
-        //   name: "Jahnavi",
-        //   role: "Secretary",
-        //   id: "190000000",
-        // },
-        // {
-        //   name: "Prateek",
-        //   role: "Treasurer",
-        //   id: "180000000",
-        // },
       ],
       webmasters: [
-        // {
-        //   name: "Sai Kiran",
-        //   role: "President",
-        //   id: "180030000",
-        // },
-        // {
-        //   name: "Prateek",
-        //   role: "Treasurer",
-        //   id: "180000000",
-        // },
-        // {
-        //   name: "Jahnavi",
-        //   role: "Secretary",
-        //   id: "190000000",
-        // },
-        // {
-        //   name: "Prateek",
-        //   role: "Treasurer",
-        //   id: "180000000",
-        // },
-        // {
-        //   name: "Jahnavi",
-        //   role: "Secretary",
-        //   id: "190000000",
-        // },
       ],
       leads: [
-        // {
-        //   name: "Sai Kiran",
-        //   role: "President",
-        //   id: "180030000",
-        // },
-        // {
-        //   name: "Prateek",
-        //   role: "Treasurer",
-        //   id: "180000000",
-        // },
-        // {
-        //   name: "Jahnavi",
-        //   role: "Secretary",
-        //   id: "190000000",
-        // },
-        // {
-        //   name: "Sai Kiran",
-        //   role: "President",
-        //   id: "180030000",
-        // },
-        // {
-        //   name: "Prateek",
-        //   role: "Treasurer",
-        //   id: "180000000",
-        // },
-        // {
-        //   name: "Jahnavi",
-        //   role: "Secretary",
-        //   id: "190000000",
-        // },
       ],
     };
   },
@@ -126,6 +53,7 @@ export default {
     TeamContainer,
   },
   created() {
+    this.isLoading = true;
     this.axios.get('https://'+ this.domain +'/focusteam', {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
     .then((response) => {
       for(let i=0;i<response.data.length;i++) {
@@ -138,10 +66,12 @@ export default {
         else if(response.data[i].groupName == "LEADS")
         this.leads.push(response.data[i]);
       }
+      this.isLoading = false;
     })
     .catch(e => {
       console.log(e);
       this.isError = true;
+      this.isLoading = false;
     })
   }
 };
@@ -169,5 +99,16 @@ export default {
   font-size: 50px;
   letter-spacing: 5px;
   margin-bottom: 5px;
+}
+
+
+.dummy {
+  width: 300px;
+  height: 500px;
+  background-color: #969696;
+}
+.center {
+  display: flex;
+  justify-content: space-evenly;
 }
 </style>
