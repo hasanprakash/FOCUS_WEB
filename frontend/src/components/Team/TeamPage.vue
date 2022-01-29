@@ -18,6 +18,7 @@
 <script>
 import TeamContainer from "./TeamContainer.vue";
 export default {
+  inject: ['domain'],
   data() {
     return {
       isError: false,
@@ -125,7 +126,7 @@ export default {
     TeamContainer,
   },
   created() {
-    this.axios.get('http://localhost:8000/focusteam', {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
+    this.axios.get('http://'+ this.domain +'/focusteam', {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
     .then((response) => {
       for(let i=0;i<response.data.length;i++) {
         if(response.data[i].groupName == "MAIN")

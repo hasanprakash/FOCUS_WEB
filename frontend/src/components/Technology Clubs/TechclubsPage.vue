@@ -10,6 +10,7 @@
 <script>
 import TechclubContainer from './TechclubContainer.vue';
 export default {
+  inject: ['domain'],
   components: { TechclubContainer },
   data() {
     return {
@@ -43,7 +44,7 @@ export default {
     }
   },
   created() {
-    this.axios.get('http://localhost:8000/techclubs', {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
+    this.axios.get('http://'+ this.domain +'/techclubs', {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
     .then((response) => {
       for(let i=0;i<response.data.length;i++) {
         this.technologyClubs.push(response.data[i]);

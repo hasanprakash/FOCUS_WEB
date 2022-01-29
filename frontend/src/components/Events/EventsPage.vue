@@ -8,6 +8,7 @@
 <script>
 import EventsContainer from "./EventsContainer.vue";
 export default {
+  inject: ['domain'],
   components: { EventsContainer },
   data() {
     return {
@@ -43,7 +44,7 @@ export default {
   },
   created() {
     this.axios
-      .get("http://localhost:8000/events/", {
+      .get("http://"+ this.domain +"/events/", {
         auth: { username: "hasanprakash", password: "@hasanprakash" },
       })
       .then((response) => {

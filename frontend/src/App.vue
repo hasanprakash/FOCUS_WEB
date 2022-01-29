@@ -10,6 +10,11 @@ export default {
   name: 'App',
   components: {
     MyFooter,
+  },
+  provide() {
+    return {
+      domain: 'focusfinalwebsite.azurewebsites.net'
+    }
   }
 }
 </script>

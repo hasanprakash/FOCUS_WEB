@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 from django.contrib.auth.models import User, Group
@@ -34,3 +35,13 @@ class TechnologyClubsViewSet(viewsets.ModelViewSet):
     queryset = TechnologyClubs.objects.all()
     serializer_class = TechnologyClubsSerializer
     permission_classes = [permissions.IsAdminUser]
+
+
+
+
+
+
+
+
+def home(request):
+    return HttpResponse("HELLO")

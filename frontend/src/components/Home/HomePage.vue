@@ -10,6 +10,7 @@
 import MyCarousal from './MyCarousal.vue';
 import UeventsContainer from './UeventsContainer.vue';
 export default {
+  inject: ['domain'],
   components: {
     // ImageCarousal,
     UeventsContainer,
@@ -53,7 +54,7 @@ export default {
     }
   },
   created() {
-    this.axios.get('http://localhost:8000/upcomingevents', {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
+    this.axios.get('http://'+ this.domain +'/upcomingevents', {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
     .then((response) => {
       console.log(response.data);
       for(let i=0;i<response.data.length;i++) {

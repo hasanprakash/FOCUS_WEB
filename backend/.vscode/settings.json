@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/d3ee035a-0556-4d8d-871f-9f0115821cbf/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/focusfinalwebsite",
+    "appService.deploySubpath": "."
+}

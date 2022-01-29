@@ -27,17 +27,19 @@ SECRET_KEY = 'django-insecure-i(7rpa1j9bqy9d7vbj%k862v86@qr4dmdyjfsttmu%5_s&c^(o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://localhost:8080', 'localhost']
+ALLOWED_HOSTS = ['http://localhost:8080', 'localhost', 'https://focusfinalwebsite.azurewebsites.net', 'focusfinalwebsite.azurewebsites.net']
 
 CORS_ORIGIN_WHITELIST = [
     'http://google.com',
     'http://localhost:8080',
     'http://localhost:8081',
-    'http://localhost:8000'
+    'http://localhost:8000',
+    'https://agreeable-tree-0c7d63e00.azurestaticapps.net'
 ]
 # Application definition
 
 INSTALLED_APPS = [
+    'focus',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,7 +48,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'focus'
 ]
 
 MIDDLEWARE = [
