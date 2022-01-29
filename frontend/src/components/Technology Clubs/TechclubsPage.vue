@@ -44,7 +44,7 @@ export default {
     }
   },
   created() {
-    this.axios.get('http://'+ this.domain +'/techclubs', {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
+    this.axios.get('https://'+ this.domain +'/techclubs', {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
     .then((response) => {
       for(let i=0;i<response.data.length;i++) {
         this.technologyClubs.push(response.data[i]);

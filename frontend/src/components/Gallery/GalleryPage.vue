@@ -26,7 +26,7 @@ export default {
     this.isLoading = true;
     console.log("Loading started!");
     this.axios
-      .get("http://"+ this.domain +"/gallery", {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
+      .get("https://"+ this.domain +"/gallery", {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
       .then((response) => {
         for (let i = 0; i < response.data.length; i++) {
           this.imgUrls.push(response.data[i]);

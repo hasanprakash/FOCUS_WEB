@@ -54,7 +54,7 @@ export default {
     }
   },
   created() {
-    this.axios.get('http://'+ this.domain +'/upcomingevents', {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
+    this.axios.get('https://'+ this.domain +'/upcomingevents', {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
     .then((response) => {
       console.log(response.data);
       for(let i=0;i<response.data.length;i++) {

@@ -44,7 +44,7 @@ export default {
   },
   created() {
     this.axios
-      .get("http://"+ this.domain +"/events/", {
+      .get("https://"+ this.domain +"/events/", {
         auth: { username: "hasanprakash", password: "@hasanprakash" },
       })
       .then((response) => {

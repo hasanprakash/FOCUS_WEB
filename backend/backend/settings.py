@@ -35,7 +35,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:8081',
     'http://localhost:8000',
     'https://agreeable-tree-0c7d63e00.azurestaticapps.net',
-    'https://wonderful-field-03d84df00.1.azurestaticapps.net'
+    'https://wonderful-field-03d84df00.1.azurestaticapps.net',
 ]
 # Application definition
 
