@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-i(7rpa1j9bqy9d7vbj%k862v86@qr4dmdyjfsttmu%5_s&c^(o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://localhost:8080', 'localhost', 'https://focusfinalwebsite.azurewebsites.net', 'focusfinalwebsite.azurewebsites.net']
+ALLOWED_HOSTS = ['http://localhost:8080', 'localhost', 'https://focusfinalwebsite.azurewebsites.net', 'focusfinalwebsite.azurewebsites.net', 'wonderful-field-03d84df00.1.azurestaticapps.net', 'klfocus.in']
 
 CORS_ORIGIN_WHITELIST = [
     'http://google.com',
