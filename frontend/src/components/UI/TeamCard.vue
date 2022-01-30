@@ -120,7 +120,8 @@ export default {
 
 .team-6 .team-content h3 {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
+  letter-spacing: 2px;
   margin-bottom: 15px;
 }
 
@@ -157,10 +158,7 @@ export default {
 .name {
   height: 40px;
 }
-.role {
-
-}
-.collegeid {
-
-}
+/* .role, .collegeid {
+  font-weight: 100;
+} */
 </style>

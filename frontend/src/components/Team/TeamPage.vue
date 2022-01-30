@@ -44,7 +44,6 @@ export default {
     this.isLoading = true;
     this.axios.get('https://'+ this.domain +'/focusteam', {auth:{username: 'hasanprakash', password: '@hasanprakash'}})
     .then((response) => {
-      console.log(response.data);
       for(let i=0;i<response.data.length;i++) {
         if(response.data[i].groupName == "MAIN")
         this.main.push(response.data[i]);
