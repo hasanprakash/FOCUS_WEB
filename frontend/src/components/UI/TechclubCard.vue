@@ -39,6 +39,10 @@ export default {
   overflow: hidden;
   width: 300px;
 }
+img {
+  height: 300px;
+}
+
 .card-header {
   padding: 0;
 }

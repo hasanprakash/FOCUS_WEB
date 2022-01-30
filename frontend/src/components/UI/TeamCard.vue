@@ -7,9 +7,9 @@
       />
     </div>
     <div class="team-content">
-      <h2><slot name="name"></slot></h2>
-      <h3 style="font-size: xx-large"><slot name="role"></slot></h3>
-      <h3 style="font-size: x-large"><slot name="id"></slot></h3>
+      <h2 class="name" style="font-size: large"><slot name="name"></slot></h2>
+      <h3 class="role" style="font-size: large"><slot name="role"></slot></h3>
+      <h3 class="collegeid" style="font-size: large"><slot name="id"></slot></h3>
       <div>
         <!-- Section: Social media -->
         <section>
@@ -150,5 +150,17 @@ export default {
   box-shadow: 0 0 10px 2px #ccc;
   padding: 20px;
   width: 300px;
+}
+
+
+/*In Card Details*/
+.name {
+  height: 40px;
+}
+.role {
+
+}
+.collegeid {
+
 }
 </style>
