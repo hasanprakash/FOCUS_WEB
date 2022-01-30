@@ -9,7 +9,7 @@ export default {
   name: 'App',
   provide() {
     return {
-      domain: 'focusfinalwebsite.azurewebsites.net'
+      domain: 'focuswebsite.azurewebsites.net'
     }
   }
 }
