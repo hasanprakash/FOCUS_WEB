@@ -66,11 +66,16 @@
                 to="/techclubs"
                 >TECHNOLOGY CLUBS</router-link
               >
-              <!-- <router-link
+              <router-link
                 class="button is-info is-inverted px-3 me-2"
-                to="/registration"
-                >REGISTRATION</router-link
-              > -->
+                to="/profile"
+                >PROFILE</router-link
+              >
+              <router-link
+                class="button is-info is-inverted px-3 me-2"
+                to="/login"
+                >LOGIN</router-link
+              >
             </li>
           </ul>
         </div>
